@@ -9,7 +9,7 @@ function Welcome(){
   useEffect(() => {
 
     if(!username){
-      navigate("/")
+      navigate("/login")
     }
 
   }, [])
