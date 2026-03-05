@@ -16,7 +16,7 @@ function Login() {
 
     try{
 
-      const res = await axios.post("https://login-backend-lism.onrender.com",{
+      const res = await axios.post("https://login-backend-lism.onrender.com/login",{
         username,
         password
       })
