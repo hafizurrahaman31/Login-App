@@ -10,6 +10,16 @@ function Login() {
 
   const navigate = useNavigate()
 
+  useEffect(() => {
+
+  const user = localStorage.getItem("username")
+
+  if(user){
+    navigate("/welcome")
+  }
+
+}, [])
+
   const handleLogin = async (e) => {
 
     e.preventDefault()
