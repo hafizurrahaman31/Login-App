@@ -1,17 +1,24 @@
+import { useEffect } from "react"
+import { useNavigate } from "react-router-dom"
+
 function Welcome(){
 
-    const username = localStorage.getItem("username")
+  const navigate = useNavigate()
+  const username = localStorage.getItem("username")
 
-    return(
+  useEffect(() => {
 
-        <div style={{textAlign:"center",marginTop:"100px"}}>
+    if(!username){
+      navigate("/")
+    }
 
-            <h1>Welcome, {username}!</h1>
+  }, [])
 
-        </div>
-
-    )
-
+  return(
+    <div className="container" style={{textAlign:"center",marginTop:"100px"}}>
+      <h1>Welcome, {username}!</h1>
+    </div>
+  )
 }
 
 export default Welcome
